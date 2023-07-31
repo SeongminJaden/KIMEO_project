@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Movement</title>
+    {% include "partial/header.html" %}
+</head><!--/head-->
+
+<body>
+
+    {% include "partial/navbar.html" %}
+
+    <section id="movement">
+        <div class="container">
+			<div class="center wow fadeInDown">
+				<h2>Movement</h2>
+				<p class="lead">Here you can control the movements of your robot</p>
+			</div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <p>Direction :</p>
+                    <select id="selectDirection" class="selectpicker">
+                        <option value="Forward">Forward</option>
+                        <option value="Backward">Backward</option>
+                        <option value="TurnLeft">TurnLeft</option>
+                        <option value="TurnRight">TurnRight</option>
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <p>Speed right motor :</p>
+                    <div class="rangeSpeedMotor">
+                        <p>0</p>
+                        <input id="speedRight" type="text" class="slider" value="" data-slider-min="0" data-slider-max="255" data-slider-step="5" data-slider-value="100" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="show">
+                        <p>255</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <p>Speed left motor :</p>
+                    <div class="rangeSpeedMotor">
+                        <p>0</p>
+                        <input id="speedLeft" type="text" class="slider" value="" data-slider-min="0" data-slider-max="255" data-slider-step="5" data-slider-value="100" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="show">
+                        <p>255</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <p>Duration :</p>
+                    <div class="input-group">
+                        <input id="inputDuration" type="text" class="form-control" aria-label="duration movement">
+                        <span class="input-group-addon">secondes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 marginT50 txtAlignC">
+                <p>Head Position :</p>
+                    <div class="rangeSpeedMotor">
+                        <p>-100</p>
+                        <input id="headPosition" type="text" class="slider" value="" data-slider-min="-100" data-slider-max="80" data-slider-step="5" data-slider-value="45" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="show">
+                        <p>80</p>
+                    </div>
+            </div>
+            <div class="col-xs-12 marginT50">
+                <button id="btnSendMovement" class="btn btn-primary btnSendApi" type="button">Send movement</button>
+            </div>
+            <div class="col-xs-12 marginT50"></div>
+            <div class="col-sm-6 marginT50">
+                <button id="btnForward" class="btn btn-primary btnSendApi" type="button">Forward</button>
+            </div>
+            <div class="col-sm-6 marginT50">
+                <button id="btnBackward" class="btn btn-primary btnSendApi" type="button">Backward</button>
+            </div>
+            <div class="col-sm-6 marginT50">
+                <button id="btnTurnRight" class="btn btn-primary btnSendApi" type="button">Turn Right</button>
+            </div>
+            <div class="col-sm-6 marginT50">
+                <button id="btnTurnLeft" class="btn btn-primary btnSendApi" type="button">Turn Left</button>
+            </div>
+            <div class="col-xs-12 marginT50">
+                <button id="btnStop" class="btn btn-primary btnSendApi" type="button">Stop</button>
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    {% include "partial/footer.html" %}
+
+    {% include "partial/scripts.html" %}
+</body>
+</html>

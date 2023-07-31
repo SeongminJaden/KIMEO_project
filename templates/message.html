@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About</title>
+    {% include "partial/header.html" %}
+</head><!--/head-->
+
+<body>
+
+    {% include "partial/navbar.html" %}
+
+    <section id="sendMessage">
+        <div class="container">
+			<div class="center wow fadeInDown">
+				<h2>Message</h2>
+				<p class="lead">Here you can send message to the other robot</p>
+
+                <button type="button" class="btn btn-primary" id="happyMessage">Send Happy Message</button>
+                <button type="button" class="btn btn-primary" id="angryMessage">Send Angry Message</button>
+			</div>
+        </div>
+    </section><!--/#bottom-->
+
+    {% include "partial/footer.html" %}
+
+    {% include "partial/scripts.html" %}
+</body>
+</html>

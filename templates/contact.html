@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact</title>
+    {% include "partial/header.html" %}
+</head><!--/head-->
+
+<body>
+
+    {% include "partial/navbar.html" %}
+
+    <section id="contact-info">
+        <div class="center">                
+            <h2>Contact page</h2>
+            <p class="lead">Find the two fab-lab project and contact them</p>
+        </div>
+        <div class="gmap-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 text-center">
+                        <div class="gmap">
+                            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDpln0Fisj7R_QVOLZbOGKJT6CCHZg2Vvw&q=Cité+des+Sciences+et+de+l'Industrie,Paris+France"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-7 map-content">
+                        <ul class="row">
+                            <li class="col-sm-6">
+                                <address>
+                                    <h5>French Fab-lab</h5>
+                                    <p>30 Avenue Corentin Cariou <br>
+                                    75019 Paris</p>
+                                    <p>Phone:<br>
+                                    Email Address: Kimeo2016@gmail.com</p>
+                                </address>
+                            </li>
+                            <li class="col-sm-6">
+                                <address>
+                                    <h5>Corean Fab-lab</h5>
+                                    <p>? <br>
+                                    ?</p>
+                                    <p>Phone:? <br>
+                                    Email Address: ?</p>
+                                </address>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  <!--/gmap_area -->
+
+    <section id="contact-page">
+        <div class="container">
+            <div class="center">        
+                <h2>Send a eMail</h2>
+            </div>
+            {% if send %}your message is sended!{% endif %}
+            <div class="row contact-wrap"> 
+                <div class="status alert alert-success" style="display: none"></div>
+
+                <form action="{% url "KimeoApp.views.contact" %}" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Submit" />
+                </form>
+                {% comment %}  <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="{% url "KimeoApp.views.contact" %}">
+                    {% csrf_token %}
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            {{ form.name.errors }}
+                            {{ form.name.label_tag }}
+                            {{ form.name }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.email.errors }}
+                            {{ form.email.label_tag }}
+                            {{ form.email }}
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            {{ form.subject.errors }}
+                            {{ form.subject.label_tag }}
+                            {{ form.subject }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.message.errors }}
+                            {{ form.message.label_tag }}
+                            {{ form.message }}
+                        </div>                        
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Submit Message</button>
+                        </div>
+                    </div>
+                </form> {% endcomment %}
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#contact-page-->
+
+    {% include "partial/footer.html" %}
+
+    {% include "partial/scripts.html" %}
+</body>
+</html>

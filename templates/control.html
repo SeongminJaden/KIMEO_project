@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About</title>
+    {% include "partial/header.html" %}
+</head><!--/head-->
+
+<body>
+
+    {% include "partial/navbar.html" %}
+    <section id="control">
+        <div class="container">
+			<div class="center wow fadeInDown">
+				<h2>Generic control</h2>
+				<p class="lead">Here you can control the light the sound and the display screen of your robot</p>
+			</div>
+            <div class="row">
+                <div class="col-xs-12 center">
+                    <h2>Light Control</h2>
+                </div>
+                <div class="col-sm-6 center">
+                    <button type="button" class="btn btn-primary" id="turnOnLight">Turn On Light</button>
+                </div>
+                <div class="col-sm-6 center">
+                    <button type="button" class="btn btn-primary" id="turnOffLight">Turn Off Light</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 center">
+                    <h2>Sound Control</h2>
+                </div>
+                <div class="col-sm-6 center">
+                    <button type="button" class="btn btn-primary" id="playHappySound">Play Happy sound</button>
+                </div>
+                <div class="col-sm-6 center">
+                    <button type="button" class="btn btn-primary" id="playHappySound">Play Angry sound</button>
+                </div>
+                <div class="col-sm-6 center">
+                    <button type="button" class="btn btn-primary" id="playOtherSound">Play other sound</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 center">
+                    <h2>Face Control</h2>
+                </div>
+                <div class="col-sm-6 center">
+                    <button type="button" class="btn btn-primary" id="angryFace">Angry face</button>
+                </div>
+                <div class="col-sm-6 center">
+                    <button type="button" class="btn btn-primary" id="happyFace">Happy face</button>
+                </div>
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    {% include "partial/footer.html" %}
+
+    {% include "partial/scripts.html" %}
+</body>
+</html>
